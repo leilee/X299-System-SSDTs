@@ -23,8 +23,7 @@ DefinitionBlock ("", "SSDT", 1, "KGP", "X299ETH", 0x00000000)
     External (_SB_.PCI0, DeviceObj)
     External (_SB_.PCI0.GBE1, DeviceObj)
     External (_SB_.PCI0.RP02, DeviceObj)
-    External (_SB_.PCI0.RP02.D0A4, DeviceObj)
-    External (_SB_.PCI0.RP02.PXSX, DeviceObj)
+    External (_SB_.PCI0.RP02.ETH1, DeviceObj)
     External (DTGP, MethodObj)    // 5 Arguments
 
     Scope (\_SB.PCI0)
@@ -69,7 +68,7 @@ DefinitionBlock ("", "SSDT", 1, "KGP", "X299ETH", 0x00000000)
                         "location", 
                         Buffer (0x02)
                         {
-                            "2"
+                            "1"
                         }, 
 
                         "subsystem-id", 
@@ -98,16 +97,6 @@ DefinitionBlock ("", "SSDT", 1, "KGP", "X299ETH", 0x00000000)
 
     Scope (\_SB.PCI0.RP02)
     {
-        Scope (D0A4)
-        {
-            Name (_STA, Zero)  // _STA: Status
-        }
-
-        Scope (PXSX)
-        {
-            Name (_STA, Zero)  // _STA: Status
-        }
-
         Device (ETH1)
         {
             Name (_ADR, Zero)  // _ADR: Address

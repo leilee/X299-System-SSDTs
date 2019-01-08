@@ -20,14 +20,14 @@
  */
 DefinitionBlock ("", "SSDT", 1, "KGP", "X299ARPT", 0x00000000)
 {
-    External (_SB_.PC03.BR3D, DeviceObj)
-    External (_SB_.PC03.BR3D.PEGP, DeviceObj)
-    External (_SB_.PC03.BR3D.SL0C, DeviceObj)
+    External (_SB_.PC03.BR3A, DeviceObj)
+    External (_SB_.PC03.BR3A.PEGP, DeviceObj)
+    External (_SB_.PC03.BR3A.SL09, DeviceObj)
     External (DTGP, MethodObj)    // 5 Arguments
 
-    Scope (_SB.PC03.BR3D)
+    Scope (_SB.PC03.BR3A)
     {
-        Scope (SL0C)
+        Scope (SL09)
         {
             Name (_STA, Zero)  // _STA: Status
         }
@@ -54,13 +54,13 @@ DefinitionBlock ("", "SSDT", 1, "KGP", "X299ARPT", 0x00000000)
                         "device-id", 
                         Buffer (0x04)
                         {
-                             0xA0, 0x43, 0x00, 0x00                           // .C..
+                             0xBA, 0x43, 0x00, 0x00                           // .C..
                         }, 
 
                         "AAPL,slot-name", 
                         Buffer (0x07)
                         {
-                            "Slot-3"
+                            "Slot-5"
                         }, 
 
                         "device_type", 
@@ -70,15 +70,15 @@ DefinitionBlock ("", "SSDT", 1, "KGP", "X299ARPT", 0x00000000)
                         }, 
 
                         "model", 
-                        Buffer (0x4A)
+                        Buffer (0x4B)
                         {
-                            "OSX WIFI Broadcom BCM94360CD 802.11 a/b/g/n/ac + Bluetooth 4.0 Controller"
+                            "OSX WIFI Broadcom BCM943602CS 802.11 a/b/g/n/ac + Bluetooth 4.1 Controller"
                         }, 
 
                         "compatible", 
                         Buffer (0x0D)
                         {
-                            "pci14e4,43a0"
+                            "pci14e4,43ba"
                         }, 
 
                         "name", 
